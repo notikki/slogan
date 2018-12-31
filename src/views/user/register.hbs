@@ -1,0 +1,31 @@
+<div id="reg">
+    <div class="phdr">₪ Register</div>
+    <div class="gmenu">
+        {{# if success }}
+            <div class="topmenu">
+                <b>Success Validation!</b>
+            </div>
+        {{ else  }}
+            {{# if errors  }}
+                <div class="rmenu">
+                       <ul>
+                            {{# each errors }}
+                                <li>{{ this.msg }}</li>
+                            {{/each}}
+                       </ul>
+                </div>
+            {{/if}}
+        {{/if}}
+    <form action="/register" method="post">
+        <p>
+            Username:<br>
+            <input type="text" name="username" value="" placeholder="Enter your username" maxlength="20"><br>
+        Password:<br>
+        <input type="password" name="password" placeholder="Enter your password" maxlength="20"><br>
+        Email:<br>
+        <input type="text" name="email" placeholder="Enter your email">
+        </p>
+        <p><input type="submit" value="Register"></p>
+    </form>
+</div>
+</div>
